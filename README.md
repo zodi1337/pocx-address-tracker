@@ -2,7 +2,8 @@
 
 Android app for tracking PoCX addresses, balances, transactions and mined blocks.
 
-Remember....i'm NOT a developer. This project is mostly created with the help of ChatGPT.
+Remember....i'm NOT a developer. This project is mostly created with the help of ChatGPT ;)
+
 ---
 
 # Data Source
