@@ -1,8 +1,6 @@
 # PoCX Mining Tracker Android App
 
-Native Android-App für die PoCX-Adresse:
-
-`pocx1qadr88lh9nre4asm2qvlzhjtypgj7rx2v47aufz`
+Android-App zum tracken von PoCX Adressen
 
 ## Datenquelle
 
