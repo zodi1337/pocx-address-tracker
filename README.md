@@ -20,7 +20,7 @@ Ein gewonnener Block wird erkannt, wenn eine Transaktion:
 
 ## Benachrichtigungen
 
-Android erlaubt periodische Hintergrundarbeit mit WorkManager standardmässig nur ab ca. 15 Minuten Intervall. Für echte Sekundengenauigkeit bräuchte es später Push/WebSocket oder ein eigenes Backend auf deinem Pi.
+Android erlaubt periodische Hintergrundarbeit mit WorkManager standardmässig nur ab ca. 15 Minuten Intervall. Für echte Sekundengenauigkeit bräuchte es später Push/WebSocket oder ein eigenes Backend.
 
 ## Öffnen
 
@@ -44,7 +44,7 @@ private const val DEFAULT_ADDRESS = "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjps
 Im Ordner `tools` liegt ein kleines Python-Testscript:
 
 ```bash
-python3 tools/test_explorer_api.py pocx1qadr88lh9nre4asm2qvlzhjtypgj7rx2v47aufz
+python3 tools/test_explorer_api.py pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv
 ```
 
 Es gibt Balance, TX-Zahl und erkannte Coinbase-Rewards aus.
