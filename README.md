@@ -1,51 +1,107 @@
 # PoCX Mining Tracker Android App
 
-Android-App zum tracken von PoCX Adressen
+Android app for tracking PoCX addresses, balances, transactions and mined blocks.
 
-## Datenquelle
+Remember....i'm NOT a developer. This project is mostly created with the help of ChatGPT.
+---
 
-Die App nutzt direkt die Esplora-kompatible API des PoCX-Explorers:
+# Data Source
 
-- `https://explorer.bitcoin-pocx.org/api/address/{address}`
-- `https://explorer.bitcoin-pocx.org/api/address/{address}/txs`
-- `https://explorer.bitcoin-pocx.org/api/address/{address}/txs/chain/{last_seen_txid}`
+The app directly uses the Esplora-compatible API from the official PoCX Explorer:
 
-## Block-Erkennung
+```text
+https://explorer.bitcoin-pocx.org/api/address/{address}
+https://explorer.bitcoin-pocx.org/api/address/{address}/txs
+https://explorer.bitcoin-pocx.org/api/address/{address}/txs/chain/{last_seen_txid}
+```
 
-Ein gewonnener Block wird erkannt, wenn eine Transaktion:
+---
 
-1. mindestens einen Coinbase-Input hat: `vin[].is_coinbase == true`
-2. an deine Mining-Adresse auszahlt: `vout[].scriptpubkey_address == address`
-3. bestätigt ist und eine `block_height` hat
+# Block Detection
 
-## Benachrichtigungen
+A mined block is detected when a transaction:
 
-Android erlaubt periodische Hintergrundarbeit mit WorkManager standardmässig nur ab ca. 15 Minuten Intervall. Für echte Sekundengenauigkeit bräuchte es später Push/WebSocket oder ein eigenes Backend.
+* contains at least one Coinbase input:
+  `vin[].is_coinbase == true`
+* pays out to the tracked mining address:
+  `vout[].scriptpubkey_address == address`
+* is confirmed and contains a valid `block_height`
 
-## Öffnen
+---
 
-1. Android Studio installieren
-2. Ordner `pocx-tracker-explorer` öffnen
-3. Gradle Sync ausführen
-4. App auf Smartphone installieren
+# Notifications
 
-## Adresse ändern
+Android only allows periodic background work through WorkManager at roughly 15-minute intervals by default.
 
-Die Adresse ist aktuell als Default gesetzt in:
+For real-time notifications in the future, the app would require:
 
-`app/src/main/java/ch/zodi/pocxtracker/MainActivity.kt`
+* Push notifications
+* WebSocket support
+* or a dedicated backend service
+
+---
+
+# Opening the Project
+
+1. Install Android Studio
+2. Open the folder:
+
+```text
+pocx-tracker-explorer
+```
+
+3. Run Gradle Sync
+4. Build and install the app on your Android device
+
+---
+
+# Default Address
+
+The default tracked address can be changed in:
+
+```text
+app/src/main/java/ch/zodi/pocxtracker/MainActivity.kt
+```
 
 ```kotlin
-private const val DEFAULT_ADDRESS = "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv"
+private const val DEFAULT_ADDRESS =
+    "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv"
 ```
-(Nogrod PoCX Mining Pool)
 
-## API-Test lokal
+(Default: Nogrod PoCX Mining Pool)
 
-Im Ordner `tools` liegt ein kleines Python-Testscript:
+---
+
+# Local API Test
+
+Inside the `tools` folder there is a small Python test script:
 
 ```bash
 python3 tools/test_explorer_api.py pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv
 ```
 
-Es gibt Balance, TX-Zahl und erkannte Coinbase-Rewards aus.
+The script prints:
+
+* current balance
+* transaction count
+* detected Coinbase rewards
+
+---
+
+# Features
+
+* Multi-address tracking
+* Push notifications for mined blocks
+* DE/EN language support
+* Configurable Explorer API
+* Clickable TX_ID links
+* Statistics dashboard
+* Address labels
+* Pull-to-refresh
+* Modern Material-style UI
+
+---
+
+# License
+
+MIT License
