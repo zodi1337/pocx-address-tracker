@@ -2,7 +2,7 @@
 import sys, json, urllib.request
 
 BASE = "https://explorer.bitcoin-pocx.org/api"
-ADDR = sys.argv[1] if len(sys.argv) > 1 else "pocx1qadr88lh9nre4asm2qvlzhjtypgj7rx2v47aufz"
+ADDR = sys.argv[1] if len(sys.argv) > 1 else "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv"
 
 def get(path):
     with urllib.request.urlopen(BASE + path, timeout=20) as r:
