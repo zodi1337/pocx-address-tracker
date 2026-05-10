@@ -38,7 +38,7 @@ Die Adresse ist aktuell als Default gesetzt in:
 `app/src/main/java/ch/zodi/pocxtracker/MainActivity.kt`
 
 ```kotlin
-private const val DEFAULT_ADDRESS = "pocx1qadr88lh9nre4asm2qvlzhjtypgj7rx2v47aufz"
+private const val DEFAULT_ADDRESS = "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv"
 ```
 
 ## API-Test lokal
