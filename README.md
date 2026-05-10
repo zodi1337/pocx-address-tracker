@@ -38,6 +38,7 @@ Die Adresse ist aktuell als Default gesetzt in:
 ```kotlin
 private const val DEFAULT_ADDRESS = "pocx1qp00ljf5sy0kdk4h8x5n4erzdshkzj4cdmvjpsv"
 ```
+(Nogrod PoCX Mining Pool)
 
 ## API-Test lokal
 
